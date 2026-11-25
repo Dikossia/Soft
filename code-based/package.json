@@ -1,0 +1,11 @@
+{
+  "name": "smart-campus-room-checker-p12",
+  "version": "2.0.0",
+  "description": "Smart Campus Room Availability Checker — code-based track (Practice #12). Static HTML/JS, zero dependencies.",
+  "scripts": {
+    "test": "node --test test/acceptance.test.js",
+    "start": "node scripts/serve.js"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}

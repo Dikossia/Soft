@@ -1,0 +1,31 @@
+:root { --bg:#f4f6fb; --card:#fff; --ink:#1d2433; --muted:#5b6475; --ok:#1f7a45; --okbg:#e6f5ec; --no:#b42318; --nobg:#fdecea; --warn:#8a5a00; --warnbg:#fff4d6; --accent:#2f5bd3; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--bg); color:var(--ink); }
+main { max-width: 680px; margin: 0 auto; padding: 24px 16px 40px; }
+h1 { margin:0; font-size:1.8rem; }
+h2 { font-size:1.05rem; margin:0 0 12px; }
+.sub { margin:4px 0 20px; color:var(--muted); }
+.track { background:#e8eefc; color:var(--accent); padding:2px 8px; border-radius:999px; font-size:.85rem; font-weight:600; }
+.card { background:var(--card); border-radius:12px; padding:18px; margin-bottom:16px; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+form { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+label { display:flex; flex-direction:column; gap:6px; font-weight:600; font-size:.92rem; }
+input[type=datetime-local], input[type=number] { font:inherit; padding:10px; border:1px solid #c9cfdb; border-radius:8px; min-height:44px; }
+fieldset { grid-column:1 / -1; border:1px solid #e1e5ee; border-radius:8px; padding:10px 12px; display:flex; gap:20px; flex-wrap:wrap; }
+legend { font-weight:600; font-size:.92rem; padding:0 4px; }
+label.inline { flex-direction:row; align-items:center; font-weight:400; min-height:32px; }
+button { grid-column:1 / -1; font:inherit; font-weight:600; background:var(--accent); color:#fff; border:0; border-radius:8px; padding:12px; min-height:44px; cursor:pointer; }
+button:focus-visible, input:focus-visible { outline:3px solid #9db5f5; outline-offset:2px; }
+.result .decision { font-size:1.4rem; font-weight:700; margin:0 0 6px; }
+.result.ok { background:var(--okbg); } .result.ok .decision { color:var(--ok); }
+.result.no { background:var(--nobg); } .result.no .decision { color:var(--no); }
+.result.invalid { background:var(--warnbg); } .result.invalid .decision { color:var(--warn); }
+.result p { margin:4px 0; }
+.code { color:var(--muted); font-size:.85rem; }
+table { width:100%; border-collapse:collapse; font-size:.9rem; }
+th, td { text-align:left; padding:6px 8px; border-bottom:1px solid #eceff5; }
+.foot { color:var(--muted); font-size:.8rem; margin:12px 0 0; }
+@media (max-width: 520px) {
+  form { grid-template-columns:1fr; }
+  h1 { font-size:1.5rem; }
+  th:nth-child(5), td:nth-child(5) { display:none; }
+}

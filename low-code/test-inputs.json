@@ -1,0 +1,22 @@
+{
+  "description": "Shared test inputs for BOTH tracks (Practice #12, Task #02/#05). Fixed clock for automated runs: 2026-12-01T09:00 local. Bookings: B-204 15 Dec 2026 10:00-11:30 and 14:00-15:00.",
+  "now": "2026-12-01T09:00",
+  "cases": [
+    { "id": "T1", "name": "valid free interval", "input": { "start": "2026-12-15T12:00", "durationMinutes": 60, "roomBlocked": false },
+      "expected": { "valid": true, "isAvailable": true, "reasonCode": "AVAILABLE" } },
+    { "id": "T2", "name": "overlap with an existing booking", "input": { "start": "2026-12-15T11:00", "durationMinutes": 60, "roomBlocked": false },
+      "expected": { "valid": true, "isAvailable": false, "reasonCode": "OVERLAP" } },
+    { "id": "T3", "name": "blocked room", "input": { "start": "2026-12-15T12:00", "durationMinutes": 60, "roomBlocked": true },
+      "expected": { "valid": true, "isAvailable": false, "reasonCode": "ROOM_BLOCKED" } },
+    { "id": "T4", "name": "duration = 0", "input": { "start": "2026-12-15T12:00", "durationMinutes": 0, "roomBlocked": false },
+      "expected": { "valid": false, "isAvailable": false, "reasonCode": "DURATION_INVALID" } },
+    { "id": "T5", "name": "duration = 121 minutes", "input": { "start": "2026-12-15T12:00", "durationMinutes": 121, "roomBlocked": false },
+      "expected": { "valid": false, "isAvailable": false, "reasonCode": "DURATION_TOO_LONG" } },
+    { "id": "T6", "name": "past start time", "input": { "start": "2026-11-20T10:00", "durationMinutes": 60, "roomBlocked": false },
+      "expected": { "valid": false, "isAvailable": false, "reasonCode": "START_IN_PAST" } },
+    { "id": "T7", "name": "adjacent non-overlapping interval", "input": { "start": "2026-12-15T11:30", "durationMinutes": 30, "roomBlocked": false },
+      "expected": { "valid": true, "isAvailable": true, "reasonCode": "AVAILABLE" } },
+    { "id": "T8", "name": "booking data unchanged after checks", "input": null,
+      "expected": { "bookingsUnchanged": true } }
+  ]
+}

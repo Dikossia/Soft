@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Smart Campus – Room Availability Checker (code-based)</title>
+  <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Smart Campus</h1>
+      <p class="sub">Room Availability Checker · <span class="track">Code-based track</span></p>
+    </header>
+
+    <section class="card">
+      <h2 id="roomName">Room B-204</h2>
+      <form id="form" novalidate>
+        <label for="start">Start time
+          <input id="start" name="start" type="datetime-local" required>
+        </label>
+        <label for="duration">Duration (minutes)
+          <input id="duration" name="duration" type="number" inputmode="numeric" min="1" max="120" step="1" value="60" required>
+        </label>
+        <fieldset>
+          <legend>Room status</legend>
+          <label class="inline"><input type="radio" name="status" value="open" checked> Open</label>
+          <label class="inline"><input type="radio" name="status" value="blocked"> Blocked (closed)</label>
+        </fieldset>
+        <button type="submit">Check availability</button>
+      </form>
+    </section>
+
+    <section id="result" class="card result" hidden aria-live="polite">
+      <p id="decision" class="decision"></p>
+      <p id="message"></p>
+      <p class="code">Reason code: <code id="reason"></code></p>
+    </section>
+
+    <section class="card">
+      <h2>Existing bookings (read-only, fictional)</h2>
+      <table>
+        <thead><tr><th>ID</th><th>Date</th><th>From</th><th>To</th><th>Title</th></tr></thead>
+        <tbody id="bookings"></tbody>
+      </table>
+      <p class="foot">Fictional demo data · no login · no database · checks never change bookings</p>
+    </section>
+  </main>
+  <script src="src/bookings.js"></script>
+  <script src="src/rules.js"></script>
+  <script src="public/ui.js"></script>
+</body>
+</html>
