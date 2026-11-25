@@ -44,9 +44,6 @@ docs/screenshots/             evidence
 | `30_lowcode_editor.jpg` | Appsmith editor with all widgets |
 | `31…37_lowcode_T1…T8.jpg` | Appsmith deployed app, every test |
 
-## Submission e-mail (to b.azimkhanov@kbtu.kz)
-Subject: `AI-Driven Software Engineering Practice #13, <Full Name>, <Student ID>`
-(the slide's example says #13 for this practice — keep the number exactly as the teacher wrote it)
 
 Body: class time and day · AI tool: Claude, model Claude Opus 5.5 (claude-opus-5-5) · live demo link ·
 public GitHub repo link · Appsmith app link + JSON export · screenshots · note "both tracks 8/8; the extra Node check of the low-code logic is marked SIMULATED".
